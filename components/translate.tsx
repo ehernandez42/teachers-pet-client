@@ -1,6 +1,5 @@
 "use client"
 import React, {useState} from "react";
-import {Textarea} from "@/components/ui/textarea"
 
 
 export const TranslateFromApi = () => {
@@ -14,6 +13,7 @@ export const TranslateFromApi = () => {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         setIsLoading(true)
+        // this is the python microservice
         const sendTranslation = fetch("http://0.0.0.0:8000/translate-eng-to-span", {
             method: "POST",
             headers: {
@@ -32,7 +32,7 @@ export const TranslateFromApi = () => {
 
     return (
         <div>
-            <form onSubmit={handleSubmit} id={"container"}
+            {/* <form onSubmit={handleSubmit} id={"container"}
                   className={"bg-transparent w-1/2 rounded-2xl m-auto p-0"}>
                 <h3 className={"text-center text-2xl pt-5"}>Translate</h3>
                 <h3 className={"text-center text-lg pt-5 pb-3"}>
@@ -61,8 +61,8 @@ export const TranslateFromApi = () => {
                                         className={"w-full hover:bg-blue-400 p-3 text-center m-auto rounded-xl bg-blue-500"}>
                         Submit
                     </button>}
-            </form>
-        </div>
+            </form> */}
+        </div> 
     )
 }
 

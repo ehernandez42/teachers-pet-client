@@ -1,12 +1,9 @@
-import AccountForm from "@/app/account/AccountForm";
-import { createClient } from '@/utils/supabase/server'
+
 
 export default async function Account() {
-    const supabase = await createClient()
+  return (
+    <>Account Page</>
+  )
+    
 
-    const {
-        data: { user },
-    } = await supabase.auth.getUser()
-
-    return <AccountForm user={user} />
 }
